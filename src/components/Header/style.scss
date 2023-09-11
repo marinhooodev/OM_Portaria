@@ -1,0 +1,183 @@
+@use "../../styles/index.scss" as *;
+
+header {
+  @include fw();
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  overflow-y: hidden;
+  z-index: 999;
+  box-shadow: 0 3px 5px $black-03;
+
+  .content {
+    @include fw();
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 0 5px 5px $black-03;
+
+    .logoBox {
+      img {
+        max-width: 90px;
+      }
+    }
+
+    nav {
+      &.active {
+        li {
+          &::before {
+            transform: translateY(-100%);
+          }
+          &::after {
+            transform: translateY(100%);
+          }
+        }
+      }
+
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 10px;
+          position: relative;
+
+          a {
+            display: inline-block;
+            padding: 10px 0;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 50px;
+            display: block;
+            background: linear-gradient(to bottom, $black-08, $black-05);
+            transform: translateY(-150%);
+            transition: 0.4s all ease;
+            border-end-start-radius: 20px;
+            border-end-end-radius: 20px;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 50px;
+            display: block;
+            background: linear-gradient(to top, $black-08, $black-05);
+            transform: translateY(150%);
+            transition: 0.4s all ease;
+            border-start-start-radius: 20px;
+            border-start-end-radius: 20px;
+            filter: drop-shadow(0 0 5px black);
+          }
+
+          &:has(a:hover, a:focus, a:focus-visible) {
+            &::before {
+              transform: translateY(-115%);
+            }
+            &::after {
+              transform: translateY(115%);
+            }
+          }
+        }
+      }
+    }
+
+    .contactBox {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      position: relative;
+
+      img {
+        max-width: 25px;
+        margin: 0 5px;
+        box-shadow: 0 0 10px $black-02;
+        border-radius: 50%;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .iconsFixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .whatsapp {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        .hiddenContact {
+          opacity: 1;
+          transform: translateX(-80%);
+        }
+      }
+
+      .hiddenContact {
+        position: absolute;
+        display: flex;
+        padding: 10px;
+        background-color: #29a61a;
+        color: white;
+        transform: translateX(-30%);
+        min-width: 150px;
+        transition: 0.3s all ease;
+        opacity: 0;
+        z-index: 2;
+        box-shadow: 0 0 10px $black-03;
+        p {
+            text-shadow: 0 0 10px $black-04;
+          white-space: nowrap;
+        }
+      }
+      img {
+        position: relative;
+        display: block;
+        max-width: 65px;
+        box-shadow: 0 0 10px $black-04;
+        border-radius: 50%;
+        z-index: 3;
+      }
+    }
+  }
+}
+
+#barrinha {
+  position: fixed;
+  width: 100%;
+  max-width: 0%;
+  display: block;
+  background-color: violet;
+  height: 5px;
+  top: 83px;
+  transform: translateY(100%);
+  z-index: 9999;
+  box-shadow: 0 1px 10px $white-04;
+  border-start-end-radius: 10px;
+  border-end-end-radius: 10px;
+}
