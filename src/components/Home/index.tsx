@@ -2,24 +2,31 @@ import Banner from "./Banner";
 import "./style.scss";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
 
-  const dep = useRef<HTMLSpanElement>(null)
-  
+  const dep = useRef<HTMLSpanElement>(null);
+
   useEffect(() => {
-
     gsap.to(dep.current, {
-      transform: "translateX(-90%)",
+      transform: "translateX(-100%)",
       scrollTrigger: {
         scrub: true,
         trigger: "#depoimentos",
         start: "center bottom",
-      }
-    })
-  
-  }, [dep])
-  
+      },
+    });
+  }, [dep]);
 
   return (
     <main id="main">
@@ -112,8 +119,8 @@ const Home = () => {
               <div className="contentSide">
                 <h3>Controlador de Acesso</h3>
                 <p>
-                  Facilitamos seu trabalho com terceirização de
-                  controladores de acesso, garantindo um ambiente bem gerido.
+                  Facilitamos seu trabalho com terceirização de controladores de
+                  acesso, garantindo um ambiente bem gerido.
                 </p>
               </div>
             </div>
@@ -149,9 +156,109 @@ const Home = () => {
 
       <section id="depoimentos">
         <div className="content">
-            <div className="sectionHeading">
-            <span ref={dep}></span>
+          <div className="depContent">
+            <div className="heading">
+              <span>DEPOIMENTOS</span>
+              <h2>O que dizem sobre a OM Portaria?</h2>
+              <p>
+                Os depoimentos dos nossos clientes e colegas de equipe são um
+                feedback valioso que nos ajuda a melhorar constantemente e a
+                continuar dando o nosso melhor.
+              </p>
             </div>
+
+            <Slider className="depCarousel" {...settings}>
+              <div className="card">
+                <div className="content">
+                  <div className="imgBox">
+                    <img src="man-1.png" alt="Homem - 1" />
+                  </div>
+
+                  <div className="nameBox">
+                    <p>Gabriel Marinho</p>
+                    <span></span>
+                  </div>
+
+                  <div className="roleStars">
+                    <span>cliente</span>
+                    <img src="icon-five-stars.png" alt="Five Stars" />
+                  </div>
+
+                  <div className="quoteMarks">
+                    <img src="quote.png" alt="" />
+                    <span></span>
+                  </div>
+
+                  <div className="quote">
+                    <cite>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Eveniet officiis aliquam, nostrum tempore aut at et
+                      voluptates dicta beatae explicabo?
+                    </cite>
+                  </div>
+                </div>
+              </div>
+              <div className="card">
+                <div className="content">
+                  <div className="imgBox">
+                    <img src="man-2.png" alt="Homem - 1" />
+                  </div>
+
+                  <div className="nameBox">
+                    <p>Carimbo</p>
+                    <span></span>
+                  </div>
+
+                  <div className="roleStars">
+                    <span>cliente</span>
+                    <img src="icon-five-stars.png" alt="Five Stars" />
+                  </div>
+
+                  <div className="quoteMarks">
+                    <img src="quote.png" alt="" />
+                    <span></span>
+                  </div>
+
+                  <div className="quote">
+                    <cite>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Eveniet officiis aliquam, nostrum tempore aut at et
+                      voluptates dicta beatae explicabo?
+                    </cite>
+                  </div>
+                </div>
+              </div>
+              <div className="card">
+                <div className="content">
+                  <div className="imgBox">
+                    <img src="man-3.png" alt="Homem - 1" />
+                  </div>
+
+                  <div className="nameBox">
+                    <p>Gangorra</p>
+                  </div>
+
+                  <div className="roleStars">
+                    <span>cliente</span>
+                    <img src="icon-five-stars.png" alt="Five Stars" />
+                  </div>
+
+                  <div className="quoteMarks">
+                    <img src="quote.png" alt="" />
+                    <span></span>
+                  </div>
+
+                  <div className="quote">
+                    <cite>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Eveniet officiis aliquam, nostrum tempore aut at et
+                      voluptates dicta beatae explicabo?
+                    </cite>
+                  </div>
+                </div>
+              </div>
+            </Slider>
+          </div>
         </div>
       </section>
     </main>

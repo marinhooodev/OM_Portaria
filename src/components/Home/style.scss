@@ -189,44 +189,147 @@
 }
 
 #depoimentos {
+  padding: 50px 20px 70px 20px;
 
-  padding: 10px 20px 70px 20px;
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-    .content {
+    .depContent {
+      position: relative;
+      max-width: 100%;
 
+      .heading {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
-        .sectionHeading {
-          position: relative;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          width: 150vh;
-
-            span {
-               position: relative;
-               width: 120vw;
-               height: 300px;
-               transform: translateX(100%);
-              &::before {
-                padding: 0 0 0 40px;
-                font-family: "Oswald";
-                content: "DEPOIMENTOS DE NOSSOS CLIENTES E FUNCIONARIOS - DEPOIMENTOS DE NOSSOS CLIENTES E FUNCIONARIOS";
-                position: absolute;
-                display: block;
-                width: 100%;
-                font-size: 5em;
-                font-weight: 300;
-                white-space: nowrap;
-                letter-spacing: 10px;
-                color: $black-02;
-              }
-            }
-
+        span {
+          font-family: "Oswald";
+          font-weight: bold;
+          color: $black-04;
+          letter-spacing: 2px;
+          margin-bottom: 20px;
         }
+
+        p {
+          color: #999;
+          max-width: 70%;
+          text-align: center;
+          font-size: 1.2em;
+          line-height: 2;
+        }
+      }
     }
 
+    .depCarousel {
+      min-height: 300px;
+
+      .slick-slide {
+        padding: 60px 10px;
+        overflow: visible;
+      }
+
+      .card {
+
+        text-align: -webkit-center;
+        text-align: -moz-center;
+
+        .content {
+          position: relative;
+          max-width: 400px;
+          box-shadow: 0 0 10px $black-03;
+          margin: 50px 0;
+          padding: 20px;
+          border-radius: 10px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-direction: column;
+
+          .imgBox {
+            transform: translateY(-60%);
+            img {
+              border-radius: 50%;
+              filter: drop-shadow(0 5px 10px $black-03);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+
+          .nameBox {
+            position: relative;
+            bottom: 20px;
+            margin: 0 0 20px 0;
+            @include fw();
+            text-align: -webkit-center;
+            text-transform: capitalize;
+            
+
+            p {
+              font-weight: 700;
+              font-family: "Lexend";
+              color: $black-08;
+              font-size: 1.8em;
+            }
+
+            span {
+              position: relative;
+              top: 10px;
+              display: block;
+              width: 4px;
+              height: 20px;
+              background-color: $black-03;
+
+            }
+          }
+
+          .roleStars {
+            @include fw();
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            span {
+              font-family: "Oswald";
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: #999;
+            }
+          }
+
+          .quoteMarks {
+            @include fw();
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            img {
+              max-width: 30px;
+              opacity: 0.3;
+            }
+            span {
+              display: block;
+              height: 1px;
+              @include fw();
+              border: 1px dashed $black-02 ;
+              margin: 0 20px;
+            }
+          }
+
+          .quote {
+            padding: 20px;
+            text-align: justify;
+            cite {
+              color: #333;
+            }
+          }          
+
+        }
+      }
+    }
+  }
 }

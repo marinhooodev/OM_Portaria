@@ -32,9 +32,6 @@ header {
           &::before {
             transform: translateY(-100%);
           }
-          &::after {
-            transform: translateY(100%);
-          }
         }
       }
 
@@ -67,26 +64,10 @@ header {
             border-end-start-radius: 20px;
             border-end-end-radius: 20px;
           }
-          &::after {
-            content: "";
-            position: absolute;
-            width: 5px;
-            height: 50px;
-            display: block;
-            background: linear-gradient(to top, $black-08, $black-05);
-            transform: translateY(150%);
-            transition: 0.4s all ease;
-            border-start-start-radius: 20px;
-            border-start-end-radius: 20px;
-            filter: drop-shadow(0 0 5px black);
-          }
 
           &:has(a:hover, a:focus, a:focus-visible) {
             &::before {
               transform: translateY(-115%);
-            }
-            &::after {
-              transform: translateY(115%);
             }
           }
         }
@@ -132,9 +113,19 @@ header {
       align-items: center;
 
       &:hover {
+        animation: jump 0.3s linear;
+        @keyframes jump {
+          50% {
+            scale: 1.2;
+          }
+          100% {
+            scale: 1 1;
+          }
+        }
         .hiddenContact {
           opacity: 1;
           transform: translateX(-80%);
+          scale: 1 1;
         }
       }
 
@@ -145,13 +136,15 @@ header {
         background-color: #29a61a;
         color: white;
         transform: translateX(-30%);
+        scale: 0 1;
         min-width: 150px;
         transition: 0.3s all ease;
+        transition-delay: 0.1s;
         opacity: 0;
         z-index: 2;
         box-shadow: 0 0 10px $black-03;
         p {
-            text-shadow: 0 0 10px $black-04;
+          text-shadow: 0 0 10px $black-04;
           white-space: nowrap;
         }
       }
