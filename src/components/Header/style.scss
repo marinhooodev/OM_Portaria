@@ -112,7 +112,7 @@ header {
       justify-content: center;
       align-items: center;
 
-      &:hover {
+      &:has(a:hover, a:focus, a:focus-visible) {
         animation: jump 0.3s linear;
         @keyframes jump {
           50% {

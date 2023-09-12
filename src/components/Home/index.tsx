@@ -2,19 +2,8 @@ import Banner from "./Banner";
 import "./style.scss";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
-
   const dep = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -39,19 +28,29 @@ const Home = () => {
             <h2>Conheça a OM Portaria</h2>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Blanditiis laudantium error mollitia, laborum est recusandae qui
-              optio quasi fuga id? Totam iusto animi optio delectus nobis vitae
-              veritatis quis, eum sint molestias unde mollitia placeat
-              praesentium natus excepturi cum saepe.
+              Fundada em 2022, a OM Portaria é uma empresa dedicada a oferecer
+              soluções completas em segurança e monitoramento. Com um
+              compromisso sólido com a proteção de empresas e patrimônios, a OM
+              Portaria rapidamente se destacou no mercado de serviços de
+              segurança.
             </p>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Blanditiis laudantium error mollitia, laborum est recusandae qui
-              optio quasi fuga id? Totam iusto animi optio delectus nobis vitae
-              veritatis quis, eum sint molestias unde mollitia placeat
-              praesentium natus excepturi cum saepe.
+              A OM Portaria é composta por uma equipe altamente capacitada e
+              comprometida, formada por profissionais experientes e treinados
+              para lidar com as mais diversas situações de segurança. Nossos
+              serviços abrangem desde portaria, vigilância, monitoramento de
+              câmeras até consultoria em segurança, garantindo uma abordagem
+              abrangente para atender às necessidades de nossos clientes.
+            </p>
+
+            <p>
+              Na OM Portaria, acreditamos que a segurança é um direito
+              fundamental, e nosso compromisso é garantir que nossos clientes
+              tenham acesso a serviços de qualidade que proporcionem paz de
+              espírito. Junte-se a nós nesta jornada em busca de um ambiente
+              mais seguro e protegido. Conheça a OM Portaria e descubra como
+              podemos ser seu parceiro confiável em segurança."
             </p>
 
             <a href="#contato" className="modelButton">
@@ -167,15 +166,15 @@ const Home = () => {
               </p>
             </div>
 
-            <Slider className="depCarousel" {...settings}>
+            <div className="depCarousel">
               <div className="card">
                 <div className="content">
                   <div className="imgBox">
-                    <img src="man-1.png" alt="Homem - 1" />
+                    <img src="woman-1.png" alt="Homem - 1" />
                   </div>
 
                   <div className="nameBox">
-                    <p>Gabriel Marinho</p>
+                    <p>Nome Mulher</p>
                     <span></span>
                   </div>
 
@@ -191,9 +190,13 @@ const Home = () => {
 
                   <div className="quote">
                     <cite>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Eveniet officiis aliquam, nostrum tempore aut at et
-                      voluptates dicta beatae explicabo?
+                      Contratamos os serviços da OM Portaria para garantir a
+                      segurança de nossa empresa e estamos extremamente
+                      satisfeitos. A equipe da OM Portaria é altamente
+                      profissional e competente. Desde que começamos a parceria,
+                      nossa segurança melhorou significativamente. Recomendo a
+                      OM Portaria a todas as empresas que buscam tranquilidade e
+                      proteção.
                     </cite>
                   </div>
                 </div>
@@ -210,7 +213,7 @@ const Home = () => {
                   </div>
 
                   <div className="roleStars">
-                    <span>cliente</span>
+                    <span>CLIENTE</span>
                     <img src="icon-five-stars.png" alt="Five Stars" />
                   </div>
 
@@ -221,9 +224,13 @@ const Home = () => {
 
                   <div className="quote">
                     <cite>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Eveniet officiis aliquam, nostrum tempore aut at et
-                      voluptates dicta beatae explicabo?
+                      Como proprietário de um condomínio, a segurança dos nossos
+                      moradores é de extrema importância. A OM Portaria tem sido
+                      um parceiro valioso nesse aspecto. Eles oferecem uma
+                      equipe de porteiros e controladores de acesso altamente
+                      qualificados, além de sistemas de monitoramento de última
+                      geração. Nossa comunidade se sente mais segura graças aos
+                      serviços da OM Portaria.
                     </cite>
                   </div>
                 </div>
@@ -239,7 +246,7 @@ const Home = () => {
                   </div>
 
                   <div className="roleStars">
-                    <span>cliente</span>
+                    <span>FUNCIONÁRIO</span>
                     <img src="icon-five-stars.png" alt="Five Stars" />
                   </div>
 
@@ -250,14 +257,26 @@ const Home = () => {
 
                   <div className="quote">
                     <cite>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Eveniet officiis aliquam, nostrum tempore aut at et
-                      voluptates dicta beatae explicabo?
+                      Aqui na OM Portaria, somos treinados com rigor e
+                      responsabilidade para garantir a segurança dos nossos
+                      clientes. A empresa valoriza seus funcionários e promove
+                      um ambiente de trabalho que incentiva o desenvolvimento
+                      profissional. Estou orgulhoso de fazer parte da equipe da
+                      OM Portaria e de contribuir para a segurança de nossos
+                      clientes.
                     </cite>
                   </div>
                 </div>
               </div>
-            </Slider>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="profissionais">
+        <div className="content">
+          <div className="textSide">
+            
           </div>
         </div>
       </section>

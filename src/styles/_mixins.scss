@@ -1,10 +1,19 @@
+// ! MEDIA MIXIN
 @mixin mq($size) {
     @media (max-width: $size) {
         @content;
     }
 }
 
+// ! FULL WIDTH MIXIN
 @mixin fw() {
     width: -webkit-fill-available;
     width: -moz-available;
+}
+
+// ! HOVER, FOCUS, FOCUS:VISIBLE MIXIN
+@mixin hover() {
+    &:hover, &:focus, &:focus-visible {
+        @content
+    }
 }
