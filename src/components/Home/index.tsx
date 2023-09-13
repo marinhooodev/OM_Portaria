@@ -161,8 +161,8 @@ const Home = () => {
               <h2>O que dizem sobre a OM Portaria?</h2>
               <p>
                 Os depoimentos dos nossos clientes e colegas de equipe são um
-                feedback valioso que nos ajuda a melhorar constantemente e a
-                continuar dando o nosso melhor.
+                feedback valioso que nos ajuda a melhorar e
+                a continuar oferecendo serviços de qualidade.
               </p>
             </div>
 
@@ -174,7 +174,7 @@ const Home = () => {
                   </div>
 
                   <div className="nameBox">
-                    <p>Nome Mulher</p>
+                    <p>Mônica</p>
                     <span></span>
                   </div>
 
@@ -208,7 +208,7 @@ const Home = () => {
                   </div>
 
                   <div className="nameBox">
-                    <p>Carimbo</p>
+                    <p>Pedro</p>
                     <span></span>
                   </div>
 
@@ -224,7 +224,7 @@ const Home = () => {
 
                   <div className="quote">
                     <cite>
-                      Como proprietário de um condomínio, a segurança dos nossos
+                      Como administrador de um condomínio, a segurança dos nossos
                       moradores é de extrema importância. A OM Portaria tem sido
                       um parceiro valioso nesse aspecto. Eles oferecem uma
                       equipe de porteiros e controladores de acesso altamente
@@ -242,7 +242,7 @@ const Home = () => {
                   </div>
 
                   <div className="nameBox">
-                    <p>Gangorra</p>
+                    <p>Guilherme</p>
                   </div>
 
                   <div className="roleStars">
@@ -276,8 +276,17 @@ const Home = () => {
       <section id="profissionais">
         <div className="content">
           <div className="textSide">
-            
+
+          <h3>Nossos profissionais são</h3>
+
           </div>
+
+          <div className="certificateSide">
+
+            <span></span>
+
+          </div>
+
         </div>
       </section>
     </main>
