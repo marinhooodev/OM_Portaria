@@ -67,7 +67,7 @@
           transition: scale 0.4s ease;
         }
 
-       @include hover() {
+        @include hover() {
           span {
             color: white;
           }
@@ -328,6 +328,6 @@
   padding: 30px;
 
   .content {
-    
+    padding: 10px;
   }
 }
