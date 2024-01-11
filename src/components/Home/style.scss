@@ -329,5 +329,50 @@
 
   .content {
     padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .textSide {
+      h2 {
+        color: white;
+        font-size: 33px;
+        margin: 0 0 10px 0;
+      }
+
+      p {
+        color: $white-08;
+        font-size: 22px;
+      }
+    }
+
+    .certificateSide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      h3 {
+        color: $white-07;
+        font-size: 25px;
+        margin:  0 0 20px 0;
+      }
+
+      span {
+        cursor: pointer;
+        background: $white-08;
+        border-radius: 5px;
+        font-size: 22px;
+        padding: 10px 15px;
+        font-weight: normal;
+        box-shadow: 0 0 10px 3px $white-03;
+        transition: 0.3s all ease;
+        
+
+        &:hover {
+          box-shadow: 0 0 10px 10px $white-02;
+        }
+      }
+    }
   }
 }

@@ -5,6 +5,34 @@
     .content {
         @include fw();
         min-height: 70dvh;
-        background: linear-gradient(to right, black, $black-03);
+        background: url(./bannerHome.webp);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            font-size: 40px;
+            color: #fff;
+        }
+
+        p {
+            font-size: 19px;
+            color: #fff;
+            max-width: 45vw;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        a {
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 19px;
+            background: white;
+            color: #000;
+            margin: 20px 0 0 0;
+
+        }
     }
 }

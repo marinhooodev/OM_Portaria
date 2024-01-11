@@ -251,7 +251,7 @@ const Home = () => {
                   </div>
 
                   <div className="quoteMarks">
-                    <img src="quote.png" alt="" />
+                    <img src="quote.png" alt="Quote" />
                     <span></span>
                   </div>
 
@@ -277,13 +277,15 @@ const Home = () => {
         <div className="content">
           <div className="textSide">
 
-          <h3>Nossos profissionais são</h3>
+          <h2>Nossos profissionais são altamente capacitados,</h2>
+          <p>e possuem certificados dos melhores cursos preparatórios da área.</p>
 
           </div>
 
           <div className="certificateSide">
 
-            <span></span>
+            <h3>Clique para abrir</h3>
+            <span>Ver certificado</span>
 
           </div>
 
