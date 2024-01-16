@@ -35,7 +35,7 @@ const Header = () => {
                 <a href="#">Home</a>
               </li>
               <li>
-                <a href="#quem-somos">Sobre</a>
+                <a href="#sobre-nos">Sobre</a>
               </li>
               <li>
                 <a href="#servicos">Serviços</a>
@@ -51,7 +51,7 @@ const Header = () => {
               <img src="zap-icon.webp" alt="Whatsapp" /> (11) 98405-8255
             </span>
             <span>
-              <img src="mail.webp" alt="Whatsapp" /> omportaria@gmail.com
+              <img src="mail.webp" alt="Whatsapp" />contato@omportaria.com.br
             </span>
           </div>
         </div>

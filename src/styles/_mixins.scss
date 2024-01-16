@@ -1,5 +1,5 @@
 // ! MEDIA MIXIN
-@mixin mq($size) {
+@mixin m($size) {
     @media (max-width: $size) {
         @content;
     }

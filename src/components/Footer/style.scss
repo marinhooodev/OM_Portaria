@@ -1,0 +1,155 @@
+@use "../../styles/index.scss" as *;
+
+footer {
+  background: $black-09;
+  padding: 30px 30px 10px 30px;
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @include m(700px) {
+        flex-direction: column;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    margin: 30px;
+
+    @include m(700px) {
+      margin: 30px 0;
+    }
+
+      .logoBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 20vw;
+
+        @include m(700px) {
+          max-width: 50vw;
+        }
+
+        p {
+          color: white;
+          font-size: 15px;
+          text-align: justify;
+          margin: 20px 0;
+        }
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+
+        span {
+          font-weight: bold;
+          color: white;
+          font-size: 25px;
+          margin: 0 0 20px 0;
+        }
+
+        nav {
+          ul {
+            li {
+              a {
+                color: white;
+                margin: 5px 0;
+                padding: 5px 0;
+                font-size: 18px;
+                position: relative;
+
+                &:hover {
+                    &::before {
+                        scale: 1 1;
+                        transform-origin: left;
+                    }
+                }
+
+                &::before {
+                    position: absolute; 
+                    content: "";
+                    height: 2px;
+                    background: white;
+                    display: block;
+                    width: 100%;
+                    bottom: 0;
+                    transform-origin: right;
+                    scale: 0 1;
+                    transition: 0.3s scale ease;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .atendimento {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+
+        span.title {
+          font-weight: bold;
+          color: white;
+          font-size: 25px;
+          margin: 0 0 20px 0;
+        }
+
+        p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          span {
+            color: white;
+            font-weight: bold;
+            margin: 0 5px 0 0;
+          }
+          font-size: 18px;
+          color: white;
+        }
+
+        .copyright {
+            margin: 30px 0 0 0;
+            display: flex;
+            img {
+                max-width: 30px;
+                margin: 0 10px 0 0;
+            }
+        }
+
+      }
+    }
+  }
+
+  .credits {
+    padding: 20px 0 0 0;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  
+
+    a {
+      text-decoration: underline;
+      color: #f1f1f1;
+      margin: 0 0 0 5px;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

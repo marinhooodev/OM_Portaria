@@ -161,8 +161,8 @@ const Home = () => {
               <h2>O que dizem sobre a OM Portaria?</h2>
               <p>
                 Os depoimentos dos nossos clientes e colegas de equipe são um
-                feedback valioso que nos ajuda a melhorar e
-                a continuar oferecendo serviços de qualidade.
+                feedback valioso que nos ajuda a melhorar e a continuar
+                oferecendo serviços de qualidade.
               </p>
             </div>
 
@@ -224,13 +224,13 @@ const Home = () => {
 
                   <div className="quote">
                     <cite>
-                      Como administrador de um condomínio, a segurança dos nossos
-                      moradores é de extrema importância. A OM Portaria tem sido
-                      um parceiro valioso nesse aspecto. Eles oferecem uma
-                      equipe de porteiros e controladores de acesso altamente
-                      qualificados, além de sistemas de monitoramento de última
-                      geração. Nossa comunidade se sente mais segura graças aos
-                      serviços da OM Portaria.
+                      Como administrador de um condomínio, a segurança dos
+                      nossos moradores é de extrema importância. A OM Portaria
+                      tem sido um parceiro valioso nesse aspecto. Eles oferecem
+                      uma equipe de porteiros e controladores de acesso
+                      altamente qualificados, além de sistemas de monitoramento
+                      de última geração. Nossa comunidade se sente mais segura
+                      graças aos serviços da OM Portaria.
                     </cite>
                   </div>
                 </div>
@@ -276,19 +276,66 @@ const Home = () => {
       <section id="profissionais">
         <div className="content">
           <div className="textSide">
-
-          <h2>Nossos profissionais são altamente capacitados,</h2>
-          <p>e possuem certificados dos melhores cursos preparatórios da área.</p>
-
+            <h2>Nossos profissionais são altamente capacitados,</h2>
+            <p>
+              e possuem certificados dos melhores cursos preparatórios da área.
+            </p>
           </div>
 
           <div className="certificateSide">
-
             <h3>Clique para abrir</h3>
             <span>Ver certificado</span>
+          </div>
+        </div>
+      </section>
 
+      <section id="contato">
+        <div className="content">
+          <div className="heading">
+            <span>CONTATO</span>
+            <h2>Entre em contato conosco</h2>
           </div>
 
+          <div className="box">
+            <div className="whatsappSide">
+              <h3>Nossos canais de atendimento</h3>
+
+              <p>
+                Seu atendimento será feito direto com o dono, para proporcionar
+                uma experiência completa sobre o serviço e tirar todas as suas
+                dúvidas.{" "}
+              </p>
+
+              <p>
+                Em no máximo 8 horas respondemos sua mensagem, e se assim
+                desejar, 24 horas para fazer seu orçamento completo e detalhado!
+              </p>
+
+              <p>
+                Aqui na OM Portaria você vai encontrar os melhores
+                profissionais, solicite já seu orçamento!
+              </p>
+
+              <div className="emailBox">
+                <a href="mailto:contato@omportaria.com.br">
+                  <img src="./mail.webp" alt="Email Icon" />
+                </a>
+                <p>contato@omportaria.com.br</p>
+              </div>
+
+              <div className="zapBox">
+                <a href="https://wa.me/+5511984058255" target="_blank">
+                  <img src="./zap-icon.webp" alt="Whatsapp Icon" />
+                </a>
+
+                <p>(11) 98405-8255</p>
+              </div>
+            </div>
+
+            <div className="imageSide">
+              <img src="./contato.jpg" alt="Guarda" />
+            </div>
+          </div>
         </div>
       </section>
     </main>
