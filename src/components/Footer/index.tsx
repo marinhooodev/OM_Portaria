@@ -59,7 +59,7 @@ const Footer = () => {
 
       </div>
 
-      <p className="credits">Desenvolvido por <a href="#">Gabriel Marinho</a>.</p>
+      <p className="credits">Desenvolvido por <a href="https://www.linkedin.com/in/gabriel-marinho-lima/"  target="_blank">Gabriel Marinho</a>.</p>
 
     </footer>
   );
