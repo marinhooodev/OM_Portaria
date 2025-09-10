@@ -51,7 +51,7 @@ const Header = () => {
               <img src="zap-icon.webp" alt="Whatsapp" /> (11) 98405-8255
             </span>
             <span>
-              <img src="mail.webp" alt="Whatsapp" />contato@omportaria.com.br
+              <img src="mail.webp" alt="Whatsapp" />omportaria.contato@gmail.com
             </span>
           </div>
         </div>

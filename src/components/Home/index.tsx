@@ -317,10 +317,10 @@ const Home = () => {
               </p>
 
               <div className="emailBox">
-                <a href="mailto:contato@omportaria.com.br">
+                <a href="mailto:omportaria.contato@gmail.com">
                   <img src="./mail.webp" alt="Email Icon" />
                 </a>
-                <p>contato@omportaria.com.br</p>
+                <p>omportaria.contato@gmail.com</p>
               </div>
 
               <div className="zapBox">

@@ -41,7 +41,7 @@ const Footer = () => {
               Canais de Atendimento
             </span>
 
-            <p><span>Email: </span> contato@omportaria.com.br</p>
+            <p><span>Email: </span> omportaria.contato@gmail.com</p>
             <p><span>Whatsapp: </span> (11) 98405-8255</p>
 
             <div className="copyright">
