@@ -5,7 +5,7 @@
     .content {
         @include fw();
         min-height: 50dvh;
-        background: url(./bannerHome.webp);
+        background: url(bannerHome.webp);
         background-size: cover;
         background-position:center;
         display: flex;
