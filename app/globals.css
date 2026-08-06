@@ -1,0 +1,566 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   OM PORTARIA — Design tokens
+   ----------------------------------------------------------------------------
+   Palette rationale (each hue does real work, none is decorative):
+
+   ink    — graphite/petrol. Wet concrete, a control room at night, permanence.
+            The foundation. Never pure black: black is alarm language.
+   stone  — warm limestone. A marble banking hall in daylight, dossier paper.
+   azul   — deep ultramarine. Conviction and action. Borrowed from azulejo and
+            Brazilian civic modernism, not from corporate navy. CTAs only.
+   vig    — seafoam ("vigília"). Calm live presence: the instrument that is awake
+            while everyone sleeps. Status, monitoring, "now". Never decorative.
+   brass  — hand-finished brass. The human beings: uniform buttons, the lobby
+            plaque, the concierge's welcome. Warmth against all that grey.
+   ========================================================================== */
+
+@theme {
+  /* Foundation — graphite / petrol */
+  --color-ink-950: #060b0d;
+  --color-ink-900: #0a1214;
+  --color-ink-850: #0e191c;
+  --color-ink-800: #122225;
+  --color-ink-700: #1a2e33;
+  --color-ink-600: #244149;
+  --color-ink-500: #35606a;
+  /* ink-400 é o menor texto sobre grafite: calibrado para 5,1:1 no ink-900.
+     O valor "natural" (#5a828c) ficava em 4,54:1 — passa raspando, e raspar
+     não é um padrão. */
+  --color-ink-400: #628c96;
+  --color-ink-300: #8ba9b1;
+  --color-ink-200: #b9ccd1;
+
+  /* Foundation — limestone / paper */
+  --color-stone-50: #faf8f3;
+  --color-stone-100: #f3efe6;
+  --color-stone-200: #e7e1d4;
+  --color-stone-300: #d5cdbc;
+  --color-stone-400: #b3aa97;
+  /* stone-500 carrega as etiquetas pequenas sobre calcário. Calibrado contra o
+     stone-100, que é o fundo mais escuro em que ele aparece: 4,8:1 lá e 5,2:1
+     no stone-50. */
+  --color-stone-500: #6e6859;
+  --color-stone-600: #625d51;
+  --color-stone-700: #45413a;
+
+  /* Conviction & action */
+  --color-azul-800: #10306f;
+  --color-azul-700: #163e90;
+  --color-azul-600: #1b4cb0;
+  --color-azul-500: #2a63d2;
+  --color-azul-300: #7ea3ec;
+
+  /* Calm live presence */
+  --color-vig-700: #226e61;
+  --color-vig-600: #2e8f7e;
+  --color-vig-500: #3fa894;
+  --color-vig-400: #5cc3ae;
+  --color-vig-300: #8ed9c7;
+
+  /* Human warmth */
+  /* brass-700 é o único latão que vira texto: 5,3:1 no stone-100. */
+  --color-brass-700: #7e5c2b;
+  --color-brass-600: #a9803f;
+  --color-brass-500: #c29553;
+  --color-brass-400: #d6b27c;
+  --color-brass-300: #e3c99b;
+
+  /* Motion — a heavy, perfectly balanced door on excellent hinges.
+     No overshoot anywhere. Everything eases into rest. */
+  --ease-door: cubic-bezier(0.16, 0.68, 0.24, 1);
+  --ease-latch: cubic-bezier(0.32, 0.08, 0.24, 1);
+}
+
+@theme inline {
+  --font-display: var(--font-display-serif), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-body-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ============================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* clears the fixed header when jumping to an anchor */
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-stone-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    font-feature-settings: "kern", "liga";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-azul-600);
+    color: var(--color-stone-50);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-azul-500);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* ============================================================================
+   Surface contexts
+   Each band declares the alpha of its own hairlines, so rules read correctly
+   whether they sit on graphite or on limestone.
+   ========================================================================== */
+
+@layer components {
+  .on-ink {
+    --rule: rgb(255 255 255 / 0.09);
+    --rule-strong: rgb(255 255 255 / 0.2);
+  }
+
+  .on-stone {
+    --rule: rgb(10 18 20 / 0.13);
+    --rule-strong: rgb(10 18 20 / 0.26);
+  }
+
+  /* ---- Grid ---------------------------------------------------------- */
+
+  .shell {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 4rem);
+  }
+
+  /* The settled cadence of a well-organized dossier. */
+  .band {
+    padding-block: clamp(5.5rem, 11vw, 10rem);
+  }
+
+  .hair {
+    border-color: var(--rule);
+  }
+
+  .rule-x {
+    height: 1px;
+    background-color: var(--rule);
+  }
+
+  /* ---- Type -----------------------------------------------------------
+     Eyebrows carry the crisp, understated precision of good signage: a
+     grotesca de sinalização em caixa-alta, espaçada como letra gravada em
+     placa. Nada de monoespaçada — mono é sotaque de terminal.               */
+
+  /* 0.75rem = 12px, o piso do que se lê sem esforço num celular. Menos que
+     isso vira ornamento, e etiqueta nenhuma aqui é ornamento. */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+    /* 0.14em: numa grotesca, o espaçamento de 0.2em que a mono pedia abriria
+       demais e a etiqueta perderia a palavra. */
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* O aperto de entreletras cresce com o corpo: é o que faz um título grande
+     parecer composto para aquele tamanho, e não uma fonte de texto ampliada.
+     A Newsreader tem um eixo óptico que faria isso melhor, mas ele dobra o
+     peso do arquivo — ver a nota em `app/layout.tsx`. */
+  .display-1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 6.2vw, 5.15rem);
+    line-height: 1.05;
+    letter-spacing: -0.024em;
+    font-weight: 500;
+  }
+
+  .display-2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.11;
+    letter-spacing: -0.019em;
+    font-weight: 500;
+  }
+
+  .display-3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+    line-height: 1.28;
+    letter-spacing: -0.008em;
+    font-weight: 600;
+  }
+
+  /* Body copy breathes: reading should feel like being briefed. */
+  .lede {
+    font-size: clamp(1.09rem, 1.35vw, 1.3rem);
+    line-height: 1.68;
+    max-width: 46ch;
+  }
+
+  .measure {
+    max-width: 62ch;
+  }
+
+  .measure-tight {
+    max-width: 48ch;
+  }
+
+  /* Ledger numerals — índices, estatísticas, leituras de mostrador.
+     `tabular-nums` alinha a coluna como uma razão contábil; a monoespaçada
+     fazia o mesmo trabalho, mas com voz de terminal. */
+  .numeral {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.08em;
+  }
+
+  /* ---- Controls -------------------------------------------------------
+     Weighted and mechanical: a precision instrument clicking into position. */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    height: 3.375rem;
+    padding-inline: 1.75rem;
+    border-radius: 2px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.045em;
+    white-space: nowrap;
+    transition:
+      background-color 450ms var(--ease-door),
+      border-color 450ms var(--ease-door),
+      color 450ms var(--ease-door),
+      transform 180ms var(--ease-latch);
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn-primary {
+    background-color: var(--color-azul-600);
+    color: var(--color-stone-50);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-azul-700);
+  }
+
+  .btn-ghost {
+    border: 1px solid var(--rule-strong);
+    color: currentColor;
+  }
+
+  .btn-ghost:hover {
+    border-color: currentColor;
+  }
+
+  .on-ink .btn-ghost:hover {
+    background-color: rgb(255 255 255 / 0.05);
+  }
+
+  .on-stone .btn-ghost:hover {
+    background-color: rgb(10 18 20 / 0.04);
+  }
+
+  /* A quiet inline link: the rule under it thickens rather than lights up. */
+  .link-quiet {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 0.15rem;
+    border-bottom: 1px solid var(--rule-strong);
+    transition:
+      border-color 450ms var(--ease-door),
+      color 450ms var(--ease-door);
+  }
+
+  .link-quiet:hover {
+    border-color: currentColor;
+  }
+
+  /* ---- Materials ------------------------------------------------------ */
+
+  /* A colonnade: the vertical rhythm of a lobby façade, felt not seen. */
+  .colonnade {
+    --col: clamp(76px, 8vw, 136px);
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent 0 calc(var(--col) - 1px),
+      rgb(255 255 255 / 0.05) calc(var(--col) - 1px) var(--col)
+    );
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 24%,
+      #000 68%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 24%,
+      #000 68%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Fine tooth, like concrete or uncoated paper. Keeps surfaces from
+     reading as flat digital fill. */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.032;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---- Fotografia -----------------------------------------------------
+     As fotos vêm de banco de imagens e, cruas, cada uma chega com a
+     temperatura e a saturação de um fotógrafo diferente — onze vozes numa
+     página que passou o resto do tempo construindo uma só. Estas três regras
+     existem para trazer todas ao mesmo ar: um pouco menos de saturação, um
+     grau a mais de contraste e o mesmo filete de moldura em volta.          */
+
+  .foto {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.82) contrast(1.04) brightness(0.97);
+  }
+
+  /* A moldura: canto de 2px como todo o resto da página e um filete que
+     encosta a imagem na grade em vez de deixá-la flutuando. */
+  .quadro {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    background-color: var(--color-ink-850);
+    border: 1px solid var(--rule);
+  }
+
+  /* O véu que devolve a legibilidade ao texto por cima da foto. Vertical para
+     legenda no pé, horizontal para texto à esquerda — sempre gradiente, nunca
+     um bloco chapado, que denunciaria a tarja. */
+  .veu-pe::after,
+  .veu-lado::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .veu-pe::after {
+    background-image: linear-gradient(
+      180deg,
+      transparent 42%,
+      rgb(6 11 13 / 0.55) 76%,
+      rgb(6 11 13 / 0.86) 100%
+    );
+  }
+
+  .veu-lado::after {
+    background-image: linear-gradient(
+      92deg,
+      rgb(6 11 13 / 0.9) 0%,
+      rgb(6 11 13 / 0.62) 42%,
+      rgb(6 11 13 / 0.3) 72%,
+      rgb(6 11 13 / 0.45) 100%
+    );
+  }
+
+  /* ---- Painel de seções (celular) -------------------------------------
+     Um <dialog> nativo: o navegador cuida de prender o foco, fechar no Esc e
+     tornar o resto da página inerte. Só desmontamos o visual padrão dele.   */
+
+  .menu-dialog {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  .menu-dialog::backdrop {
+    background-color: rgb(6 11 13 / 0.72);
+  }
+
+  /* ---- Form ----------------------------------------------------------
+     Signage-like: a label above, a hairline beneath, nothing boxed in.    */
+
+  .field {
+    width: 100%;
+    /* 3rem = 48px: alvo de toque confortável no celular, que é onde este
+       formulário é preenchido na maior parte das vezes. */
+    min-height: 3rem;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--rule-strong);
+    padding: 0.6rem 0 0.7rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: inherit;
+    border-radius: 0;
+    transition:
+      border-color 450ms var(--ease-door),
+      background-color 450ms var(--ease-door);
+  }
+
+  .field:hover {
+    border-color: var(--color-ink-500);
+  }
+
+  .field:focus {
+    outline: none;
+    border-color: var(--color-azul-600);
+    border-bottom-width: 2px;
+    padding-bottom: calc(0.7rem - 1px);
+  }
+
+  .field::placeholder {
+    color: var(--color-stone-500);
+  }
+
+  .field-label {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-stone-600);
+  }
+}
+
+/* ============================================================================
+   Motion
+   Content settles into place. It never pops, springs or performs.
+   ========================================================================== */
+
+@layer components {
+  .reveal {
+    transition:
+      opacity 1000ms var(--ease-door),
+      transform 1000ms var(--ease-door);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  /* Only hide content when scripting is actually available, so a browser
+     without JS renders the full page instead of a blank one. */
+  @media (scripting: enabled) {
+    .reveal {
+      opacity: 0;
+      transform: translate3d(0, 18px, 0);
+    }
+  }
+
+  .reveal[data-settled="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* The instrument that is awake: a slow breath, never a blink. */
+  .pulse-live {
+    animation: pulse-live 3.6s var(--ease-door) infinite;
+  }
+
+  @keyframes pulse-live {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.55);
+    }
+  }
+
+  /* A monitoring sweep crossing the wall, slow enough to be reassuring. */
+  .sweep {
+    animation: sweep 11s linear infinite;
+  }
+
+  /* Anima `top`, não `translateY`: o filete tem 1px de altura, então uma
+     translação percentual não sairia do lugar. */
+  @keyframes sweep {
+    0% {
+      top: -1%;
+      opacity: 0;
+    }
+    14% {
+      opacity: 1;
+    }
+    86% {
+      opacity: 1;
+    }
+    100% {
+      top: 101%;
+      opacity: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none;
+  }
+
+  .pulse-live,
+  .sweep {
+    animation: none;
+  }
+
+  .pulse-live {
+    opacity: 1;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
