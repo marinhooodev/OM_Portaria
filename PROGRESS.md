@@ -10,7 +10,7 @@ Documento de contexto para retomar o trabalho em outra sessão.
 Landing page de página única para uma empresa brasileira de portaria e segurança
 patrimonial: coloca porteiros, controladores de acesso e recepcionistas em
 condomínios, empresas e canteiros de obra, com monitoramento por câmeras 24h e
-consultoria. O atendimento é feito direto com o dono: resposta em até 8 horas e
+consultoria. A promessa de atendimento é de prazo: resposta em até 8 horas e
 orçamento completo em 24 horas.
 
 Construída a partir do briefing em [`LANDING_PROMPT.md`](./LANDING_PROMPT.md),
@@ -363,7 +363,7 @@ bundle e procurar as strings — o JSX compilado preserva o texto legível.
 | E-mail | **omportaria.contato@gmail.com** |
 | Fundação | **2022** |
 | Prazos | resposta em até **8 h**, orçamento completo em **24 h** |
-| Atendimento | direto com o dono |
+| Atendimento | "direto com o dono" — publicado pela original, **não usado aqui** (ver abaixo) |
 
 Também vieram da original, verbatim: os **seis serviços** com seus textos de
 resumo, os **três depoimentos** (Pedro/cliente-síndico, Mônica/cliente,
@@ -385,7 +385,7 @@ Nada disto foi inventado para preencher espaço; simplesmente não está na pág
   promessa de prazo (8 h / 24 h), que é real.
 - **Números de clientes, postos ou colaboradores** — a original não publica
   nenhum. Os indicadores do hero foram refeitos só com fatos publicados
-  (24 h de monitoramento, 8 h de resposta, 24 h de orçamento, 1 interlocutor).
+  (24 h de monitoramento, 8 h de resposta, 24 h de orçamento, 6 frentes).
 - **Certificações nomeadas** — a única afirmação de formação é "certificados dos
   melhores cursos preparatórios da área", e é assim que aparece na página.
 
@@ -393,7 +393,8 @@ Nada disto foi inventado para preencher espaço; simplesmente não está na pág
 
 | Item | Onde | Por quê |
 |---|---|---|
-| **Nome do proprietário** | `contato.responsavel.nome` | Hoje: "O dono atende". A original nunca nomeia o dono. A seção inteira se apoia em "quem responde esta página é quem responde pelo serviço" — ela **ganha muito** com um nome e uma assinatura de verdade. É a pendência de maior retorno. |
+| **Nome de quem atende** | `contato.responsavel.nome` | Hoje: "Atendimento OM Portaria", um provisório. A original nunca nomeia ninguém. A seção é construída para levar um nome e uma assinatura de verdade — é a pendência de maior retorno. |
+| **"Atendimento direto com o dono"** | — | A original publica isso, mas a página **não usa**: pede que o leitor se importe com o organograma, e a versão pela negativa ("sem vendedor/intermediário") é incoerente, porque sempre existe alguém atendendo. No lugar ficou só o que é verificável: prazo de 8 h e orçamento em 24 h. Não reintroduzir sem decisão do cliente. |
 | **Região atendida** | — | Se a empresa quiser declarar, entra no rodapé, no fecho e no `areaServed` do JSON-LD. |
 | **Detalhes dos serviços** | `servicos.itens[].detalhes` | ⚠️ Os 4 bullets de cada serviço foram escritos por mim para dar corpo ao acordeão. São descritivos, não contratuais — mas **revise item por item** e ajuste ao que a OM Portaria de fato entrega. |
 | **Números auditáveis** | `hero.indicadores` | Se a empresa tiver contagem real de condomínios ou postos, ela é mais forte que os prazos. Um número inflado, porém, destrói exatamente a confiança que esta página existe para construir. |

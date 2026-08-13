@@ -39,7 +39,7 @@ export const hero = {
   eyebrow: `Portaria profissional · desde ${empresa.desde}`,
   titulo: "Uma portaria bem conduzida não chama atenção.",
   texto:
-    "Colocamos porteiros, controladores de acesso e recepcionistas treinados dentro de condomínios, empresas e canteiros de obra — com monitoramento por câmeras 24 horas e atendimento feito direto com o dono. Sua mensagem é respondida em até 8 horas.",
+    "Colocamos porteiros, controladores de acesso e recepcionistas treinados dentro de condomínios, empresas e canteiros de obra — com monitoramento por câmeras 24 horas. Sua mensagem é respondida em até 8 horas e o orçamento completo sai em 24.",
   acaoPrimaria: "Pedir um orçamento",
   acaoSecundaria: "Como trabalhamos",
   statusRotulo: "Central de monitoramento",
@@ -53,7 +53,7 @@ export const hero = {
     { valor: "24", unidade: "horas", nota: "de monitoramento por câmeras" },
     { valor: "8", unidade: "horas", nota: "no máximo para responder sua mensagem" },
     { valor: "24", unidade: "horas", nota: "para o orçamento completo e detalhado" },
-    { valor: "1", unidade: "interlocutor", nota: "o dono, do primeiro contato ao contrato" },
+    { valor: "6", unidade: "frentes", nota: "de portaria, acesso e monitoramento" },
   ],
 } as const;
 
@@ -163,7 +163,7 @@ export const servicos = {
       id: "obras",
       titulo: "Canteiro de obras",
       resumo:
-        "Serviço de segurança em canteiro de obras, garantindo a segurança de seus equipamentos e trabalhadores.",
+        "Serviço de vigilância em canteiro de obras, garantindo a segurança de seus equipamentos e trabalhadores.",
       detalhes: [
         "Controle de entrada e saída de materiais e veículos",
         "Acompanhamento do fluxo de terceiros no canteiro",
@@ -185,10 +185,10 @@ export const metodo = {
     "A ordem importa mais do que a pressa. É ela que faz o primeiro turno começar sem susto.",
   etapas: [
     {
-      titulo: "Você fala com o dono",
+      titulo: "Você conta o que precisa",
       texto:
-        "Seu atendimento é feito direto com o dono, para você ter uma visão completa do serviço e tirar todas as dúvidas antes de decidir qualquer coisa.",
-      marca: "Sem intermediário",
+        "Onde fica, quantos acessos tem, quais turnos precisa cobrir e o que já existe instalado. É essa conversa que define o tamanho do posto, antes de qualquer número.",
+      marca: "Primeiro contato",
     },
     {
       titulo: "Resposta e orçamento",
@@ -224,7 +224,6 @@ export const central = {
     { rotulo: "Operação", valor: "24 h · todos os dias" },
     { rotulo: "Resposta à sua mensagem", valor: "em até 8 h" },
     { rotulo: "Orçamento completo", valor: "em até 24 h" },
-    { rotulo: "Atendimento", valor: "direto com o dono" },
   ],
   /**
    * Os pontos que costumam entrar num plano de monitoramento. São exemplos
@@ -298,9 +297,9 @@ export const credenciais = {
         "Nossos profissionais são altamente capacitados e possuem certificados dos melhores cursos preparatórios da área.",
     },
     {
-      titulo: "Atendimento direto com o dono",
+      titulo: "Monitoramento 24 horas",
       texto:
-        "Seu atendimento é feito direto com o dono, para proporcionar uma experiência completa sobre o serviço e tirar todas as suas dúvidas.",
+        "As imagens são acompanhadas em tempo real, todos os dias, com comunicação imediata ao síndico ou ao gestor predial.",
     },
     {
       titulo: "Resposta em até 8 horas",
@@ -336,11 +335,11 @@ export const contato = {
     // ⚠️ TODO(cliente): a landing original não publica o nome do proprietário.
     // Esta seção inteira é construída sobre "quem responde é quem responde pelo
     // serviço" — ela ganha muito com um nome e uma assinatura de verdade aqui.
-    nome: "O dono atende",
+    nome: "Atendimento OM Portaria",
     cargo: empresa.razaoSocial,
     iniciais: "OM",
     mensagem:
-      "Seu atendimento é feito direto comigo, para você ter uma visão completa do serviço e tirar todas as dúvidas. Em no máximo 8 horas eu respondo a sua mensagem e, se você quiser, em 24 horas devolvo o orçamento completo e detalhado. Sem visita de vendedor, sem proposta genérica.",
+      "Em no máximo 8 horas eu respondo a sua mensagem. Se você quiser, em 24 horas devolvo o orçamento completo e detalhado, montado em cima do seu local: quantos acessos, quais turnos e o que já existe instalado.",
   },
   // Dados reais da landing original.
   whatsapp: "5511984058255",

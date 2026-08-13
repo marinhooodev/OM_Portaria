@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     template: "%s · OM Portaria",
   },
   description:
-    "Porteiros, controladores de acesso e recepcionistas treinados para condomínios, empresas e canteiros de obra, com monitoramento por câmeras 24 horas. Atendimento direto com o dono: resposta em até 8 horas e orçamento completo em 24 horas.",
+    "Porteiros, controladores de acesso e recepcionistas treinados para condomínios, empresas e canteiros de obra, com monitoramento por câmeras 24 horas. Resposta em até 8 horas e orçamento completo em 24 horas.",
   applicationName: "OM Portaria",
   authors: [{ name: "OM Portaria" }],
   keywords: [
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     siteName: "OM Portaria",
     title: "OM Portaria — uma portaria bem conduzida não chama atenção",
     description:
-      "Porteiros, controladores de acesso e recepcionistas treinados, com monitoramento 24 horas. Atendimento direto com o dono, orçamento completo em 24 horas.",
+      "Porteiros, controladores de acesso e recepcionistas treinados, com monitoramento 24 horas. Resposta em até 8 horas e orçamento completo em 24 horas.",
   },
   robots: { index: true, follow: true },
   formatDetection: { telephone: true, address: false, email: true },
